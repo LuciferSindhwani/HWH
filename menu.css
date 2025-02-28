@@ -1,0 +1,127 @@
+Menu toggle button
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #1e2a3a; /* Matching the dark blue from your headers */
+    padding: 5px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Side Menu Styles */
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff, #f9f5f2); /* Using white to soft beige gradient from your site */
+    color: #1e2a3a; /* Dark blue for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1); /* Lighter shadow to match the elegant feel */
+    transition: left 0.5s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#sideMenu a {
+    color: #666; /* Matching the text color from your site */
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+    width: 100%;
+    text-align: center;
+    display: block; /* Ensure links display properly */
+}
+
+#sideMenu a:hover {
+    background: #f2d0cb; /* Lighter version of your accent color for hover states */
+    color: #1e2a3a; /* Dark blue text on hover */
+}
+
+/* Overlay when menu is open */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 42, 58, 0.3); /* Using the dark blue with transparency */
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Animation for menu items */
+#sideMenu a {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, background 0.3s, color 0.3s;
+}
+
+#sideMenu.open a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Staggered animation for menu items */
+#sideMenu a:nth-child(2) { transition-delay: 0.1s; }
+#sideMenu a:nth-child(3) { transition-delay: 0.15s; }
+#sideMenu a:nth-child(4) { transition-delay: 0.2s; }
+#sideMenu a:nth-child(5) { transition-delay: 0.25s; }
+#sideMenu a:nth-child(6) { transition-delay: 0.3s; }
+#sideMenu a:nth-child(7) { transition-delay: 0.35s; }
+
+/* Book Now button in menu */
+#sideMenu .book-now-menu {
+    background-color: #d0574a; /* Matching the exact coral color from your site */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px; /* Rounded corners like your main button */
+    margin-top: 10px;
+    font-weight: normal;
+    transition: background-color 0.3s;
+}
+
+#sideMenu .book-now-menu:hover {
+    background-color: #c04a3e; /* Slightly darker on hover */
+}
+
+/* Add a subtle border at the top of each menu item */
+#sideMenu a:not(.book-now-menu) {
+    border-top: 1px solid rgba(245, 245, 245, 0.5);
+}
+
+/* Add a subtle logo section at the top of the menu */
+#sideMenu:before {
+    content: "Vitale";
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e2a3a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,142 @@
+/* Menu toggle button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #1e2a3a; /* Matching the dark blue from your headers */
+    padding: 5px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Side Menu Styles - Modified for scale effect */
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, #ffffff, #f9f5f2);
+    color: #1e2a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow-y: auto;
+    
+    /* Initial state for animation */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.85) rotate(-3deg);
+    transform-origin: top left;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                opacity 0.5s ease,
+                visibility 0.5s ease;
+}
+
+/* Open state */
+#sideMenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+}
+
+#sideMenu a {
+    color: #666;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: transparent;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+#sideMenu a:hover {
+    background: #f2d0cb;
+    color: #1e2a3a;
+    transform: translateX(5px);
+}
+
+/* Overlay when menu is open */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 42, 58, 0.3);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(3px); /* Adds a subtle blur effect */
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Animation for menu items */
+#sideMenu a {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.9);
+    transition: opacity 0.5s ease, 
+                transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                background 0.3s, 
+                color 0.3s;
+}
+
+#sideMenu.open a {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Staggered animation for menu items */
+#sideMenu a:nth-child(1) { transition-delay: 0.05s; }
+#sideMenu a:nth-child(2) { transition-delay: 0.1s; }
+#sideMenu a:nth-child(3) { transition-delay: 0.15s; }
+#sideMenu a:nth-child(4) { transition-delay: 0.2s; }
+#sideMenu a:nth-child(5) { transition-delay: 0.25s; }
+
+/* Book Now button in menu */
+#sideMenu .book-now-menu {
+    background-color: #d0574a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    font-weight: normal;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#sideMenu .book-now-menu:hover {
+    background-color: #c04a3e;
+    transform: scale(1.05);
+}
+
+/* Add a subtle logo section at the top of the menu */
+#sideMenu:before {
+    content: "Vitale";
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e2a3a;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+    text-align: center;
+}

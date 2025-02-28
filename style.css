@@ -1,0 +1,436 @@
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Times New Roman', serif;
+    }
+    
+    body {
+        color: #333;
+        line-height: 1.6;
+        background-color: #fefcfa;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Header & Navigation */
+    header {
+        padding: 15px 0;
+        border-bottom: 1px solid #f5f5f5;
+        background-color: #ffffff;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .logo-icon {
+        margin-right: 8px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #666;
+        font-weight: normal;
+        font-size: 16px;
+    }
+    
+    .book-now {
+        background-color: #d0574a;
+        color: white !important;
+        padding: 8px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: normal !important;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: 0;
+        position: relative;
+        height: 90vh;
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+        max-width: 600px;
+    }
+    
+    .hero h1 {
+        font-size: 52px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        font-style: italic;
+        font-weight: normal;
+        color: #1e2a3a;
+        text-align: center;
+    }
+    
+    .hero p {
+        color: #666;
+        margin-bottom: 30px;
+        max-width: 450px;
+        font-size: 16px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .btn {
+        display: inline-block;
+        background-color: #d0574a;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: normal;
+        font-size: 16px;
+    }
+    
+    .healthcare-pro {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 90%;
+        z-index: 1;
+    }
+    
+    .healthcare-patient {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 90%;
+        z-index: 1;
+    }
+    
+    .heart-icon {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 240px;
+        z-index: 0;
+    }
+    
+    /* Empowering Section */
+    .empowering {
+        padding: 50px 0;
+        background-color: whitesmoke;
+        height: 100vh;
+    }
+    
+    .empowering-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .empowering-image {
+        flex: 1;
+        padding-right: 30px;
+        margin-right: 50px;
+    }
+    
+    .empowering-text {
+        flex: 1;
+    }
+    
+    .empowering-text h2 {
+        font-size: 36px;
+        font-style: italic;
+        font-weight: normal;
+        margin-bottom: 20px;
+        color: #1e2a3a;
+        line-height: 1.2;
+    }
+    
+    .empowering-text p {
+        color: #666;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .empowering-links {
+        margin-bottom: 25px;
+    }
+    
+    .empowering-links a {
+        display: block;
+        color: #666;
+        text-decoration: none;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+    
+    /* Mission Section */
+    .mission {
+        padding: 60px 0;
+        background-color: #f9f5f2;
+    }
+    
+    .mission-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        font-style: italic;
+        font-weight: normal;
+        color: #1e2a3a;
+        position: relative;
+    }
+    
+    .mission-title::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 30px;
+        background-color: #f9f5f2;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+    
+    .mission-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .mission-points {
+        flex: 1;
+        padding-right: 30px;
+    }
+    
+    .mission-image {
+        flex: 1;
+    }
+    
+    .mission-point {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+    }
+    
+    .mission-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+        background-color: #f2d0cb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .mission-text h3 {
+        font-weight: normal;
+        margin-bottom: 5px;
+        color: #333;
+        font-size: 18px;
+    }
+    
+    .mission-text p {
+        color: #666;
+        font-size: 14px;
+    }
+    
+    /* Services Section */
+    .services {
+        padding: 60px 0;
+        background-color: #1e2a3a;
+        color: white;
+    }
+    
+    .services-title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        font-style: italic;
+        font-weight: normal;
+    }
+    
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 25px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+    
+    .service-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+        font-weight: normal;
+    }
+    
+    .service-description {
+        color: #aaa;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Personalized Care Section */
+    .personalized {
+        padding: 60px 0;
+        background-color: #F1F2F6;
+    }
+    
+    .personalized-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .personalized-text {
+        flex: 1;
+        padding-right: 40px;
+    }
+    
+    .personalized-image {
+        flex: 1;
+        /* drop-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+
+    }
+    
+    .personalized-subtitle {
+        font-size: 24px;
+        color: #d0574a;
+        margin-bottom: 10px;
+        font-weight: normal;
+    }
+    
+    .personalized-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-style: italic;
+        font-weight: normal;
+        color: #1e2a3a;
+    }
+    
+    .personalized-tagline {
+        font-size: 18px;
+        font-weight: normal;
+        margin-bottom: 15px;
+        color: #333;
+    }
+    
+    .personalized-description {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 16px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 50px 0 20px;
+        background-color: white;
+        border-top: 1px solid #f5f5f5;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    
+    .footer-logo {
+        flex: 1;
+    }
+    
+    .footer-links {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .footer-column h4 {
+        margin-bottom: 20px;
+        color: #4a90e2;
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .footer-column ul {
+        list-style: none;
+    }
+    
+    .footer-column li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+    }
+    
+    .copyright {
+        text-align: center;
+        color: #999;
+        font-size: 12px;
+        margin-top: 20px;
+    }
+    
+    /* Decorative Elements */
+    .flower-corner {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 120px;
+        height: 120px;
+        opacity: 0.5;
+    }
+    #1{
+        margin-left: 20px;
+    }
+    #3{
+        margin-left: 20px;
+    }
